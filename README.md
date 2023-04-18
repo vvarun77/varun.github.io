@@ -1,5 +1,3 @@
-#"Hello World"
-
 Hey! I'm Varun Vijayababu, an Electrical and Computer Engineering + Mathematics major at the University of Washington. I'm interested in ML/AI and embedded systems,
 along with applying mathematics to finance.
 
