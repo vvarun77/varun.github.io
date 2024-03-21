@@ -4,7 +4,7 @@ Current involvements:
 
 Software Engineer @ Amazon Books
 
-Founder/Chief Engineer @ Roomie (Currently in a startup accelerator!)
+Founder/Chief Engineer @ Room Corp (Currently in a startup accelerator!)
 
 Researcher @ University of Washington
 
