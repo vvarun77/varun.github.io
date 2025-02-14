@@ -56,7 +56,7 @@
             .light {
                 fill: #333;
                 /* Begin its animation after the line drawing completes (3s delay) */
-                animation: lightUp 1s forwards 0s;
+                animation: lightUp 1s forwards 1s;
             }
 
             /* Keyframes for lighting up the circle */
@@ -96,7 +96,7 @@
 
         <script>
             // Total duration of the splash animation (drawing + lighting up)
-            const animationDuration = 4000; // in milliseconds
+            const animationDuration = 2000; // in milliseconds
 
             // After the animation finishes, remove the splash screen and show main content.
             setTimeout(() => {
