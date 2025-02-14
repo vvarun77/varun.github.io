@@ -1,1 +1,117 @@
-"Hello World" 
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Personal Website</title>
+        <style>
+            /* Ensure the page starts with no overflow during the animation */
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background: #111;
+                color: #eee;
+                font-family: Arial, sans-serif;
+            }
+
+            /* Fullscreen splash container for the animation */
+            .splash {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: #111;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            /* Styling for the SVG circuit */
+            .circuit {
+                width: 300px;
+                height: 300px;
+            }
+
+            /* Animate the circuit path: drawing effect */
+            .circuit path {
+                stroke: #0f0;
+                stroke-width: 2;
+                fill: none;
+                stroke-dasharray: 1000; /* Large value to cover full length */
+                stroke-dashoffset: 1000; /* Start fully hidden */
+                animation: draw 3s forwards;
+            }
+
+            /* Keyframes for drawing the circuit line */
+            @keyframes draw {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            /* The light circle, initially dark */
+            .light {
+                fill: #333;
+                /* Begin its animation after the line drawing completes (3s delay) */
+                animation: lightUp 1s forwards 3s;
+            }
+
+            /* Keyframes for lighting up the circle */
+            @keyframes lightUp {
+                to {
+                    fill: #ff0;
+                }
+            }
+
+            /* Main content container, initially hidden */
+            .content {
+                opacity: 0;
+                transition: opacity 1s ease-in;
+                padding: 20px;
+            }
+            .content.show {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Splash Screen with SVG Animation -->
+        <div class="splash" id="splash">
+            <svg class="circuit" viewBox="0 0 300 300">
+                <!-- A simple horizontal circuit line -->
+                <path d="M50,150 L250,150" />
+                <!-- A circle representing the light -->
+                <circle class="light" cx="250" cy="150" r="10" />
+            </svg>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content" id="mainContent">
+            <h1>Welcome to My Personal Website</h1>
+            <p>This is where your content goes. Enjoy your stay!</p>
+        </div>
+
+        <script>
+            // Total duration of the splash animation (drawing + lighting up)
+            const animationDuration = 4000; // in milliseconds
+
+            // After the animation finishes, remove the splash screen and show main content.
+            setTimeout(() => {
+                const splash = document.getElementById("splash");
+                const mainContent = document.getElementById("mainContent");
+
+                // Hide the splash screen
+                splash.style.display = "none";
+
+                // Reveal the main content by adding a class to trigger the fade-in effect
+                mainContent.classList.add("show");
+
+                // Restore page scroll if needed
+                document.body.style.overflow = "auto";
+            }, animationDuration);
+        </script>
+    </body>
+</html>
