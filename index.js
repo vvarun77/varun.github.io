@@ -1,7 +1,3 @@
-import * as THREE from "three";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
-import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
 
@@ -29,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(renderer.domElement);
 
     // Text geometry
-    const loader = new FontLoader();
+    const loader = new THREE.FontLoader();
     const letters = "VARUN".split("");
     const letterMeshes = [];
     const letterSpacing = 1.5; // Increased spacing for better 3D view
