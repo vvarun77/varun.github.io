@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function main() {
   const app = document.getElementById("app");
 
   function createSVGElement(type, attributes) {
@@ -88,4 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "auto";
     }, 500);
   }, animationDuration);
-});
+}
+
+main();
