@@ -1,0 +1,88 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out;
+}
+
+.circuit {
+    width: 400px;
+    height: 150px;
+}
+
+.circuit path {
+    stroke: #fff;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.light {
+    fill: #333;
+}
+
+.light:nth-child(6) {
+    animation: lightUp 0.3s forwards 2s;
+}
+.light:nth-child(7) {
+    animation: lightUp 0.3s forwards 2.15s;
+}
+.light:nth-child(8) {
+    animation: lightUp 0.3s forwards 2.3s;
+}
+.light:nth-child(9) {
+    animation: lightUp 0.3s forwards 2.45s;
+}
+.light:nth-child(10) {
+    animation: lightUp 0.3s forwards 2.6s;
+}
+.light:nth-child(11) {
+    animation: lightUp 0.3s forwards 2.75s;
+}
+.light:nth-child(12) {
+    animation: lightUp 0.3s forwards 2.9s;
+}
+.light:nth-child(13) {
+    animation: lightUp 0.3s forwards 3.05s;
+}
+
+@keyframes lightUp {
+    to {
+        fill: #ff0;
+    }
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    padding: 20px;
+}
+
+.content.show {
+    opacity: 1;
+}
