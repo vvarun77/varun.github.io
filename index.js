@@ -95,6 +95,7 @@ function main() {
 
     content.appendChild(h1);
     content.appendChild(p);
+    content.appendChild(loader);
 
     return content;
   }
