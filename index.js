@@ -1,6 +1,8 @@
 function main() {
   const app = document.getElementById("app");
 
+  const loader = new THREE.FontLoader();
+
   function createSVGElement(type, attributes) {
     const elem = document.createElementNS("http://www.w3.org/2000/svg", type);
     for (const [key, value] of Object.entries(attributes)) {
@@ -59,6 +61,31 @@ function main() {
     const content = document.createElement("div");
     content.id = "mainContent";
     content.className = "content";
+
+    const loader = new THREE.FontLoader();
+
+    loader.load(
+      "../resources/threejs/fonts/helvetiker_regular.typeface.json",
+      (font) => {
+        const text = "three.js";
+
+        const geometry = new THREE.TextGeometry(text, {
+          font: font,
+          size: 3,
+
+          depth: 0.2,
+
+          curveSegments: 12,
+
+          bevelEnabled: true,
+          bevelThickness: 0.15,
+
+          bevelSize: 0.3,
+
+          bevelSegments: 5,
+        });
+      },
+    );
 
     const h1 = document.createElement("h1");
     h1.textContent = "Welcome to Varun's Personal Website";
