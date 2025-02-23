@@ -1,3 +1,5 @@
+import { MainContent } from "./mainContent";
+
 function main() {
   const app = document.getElementById("app");
 
@@ -53,23 +55,6 @@ function main() {
     splash.className = "splash";
     splash.appendChild(Circuit());
     return splash;
-  }
-
-  function MainContent() {
-    const content = document.createElement("div");
-    content.id = "mainContent";
-    content.className = "content";
-
-    const h1 = document.createElement("h1");
-    h1.textContent = "Welcome to Varun's Personal Website";
-
-    const p = document.createElement("p");
-    p.textContent = "This is where your content goes. Enjoy your stay!";
-
-    content.appendChild(h1);
-    content.appendChild(p);
-
-    return content;
   }
 
   app.appendChild(Splash());

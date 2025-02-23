@@ -7,32 +7,6 @@
     </head>
     <body>
         <div id="app"></div>
-        <script type="module" src="index.js">
-            import * as THREE from 'three';
-            const loader = new THREE.FontLoader();
-
-                loader.load(
-                  "../resources/threejs/fonts/helvetiker_regular.typeface.json",
-                  (font) => {
-                    const text = "three.js";
-
-                    const geometry = new THREE.TextGeometry(text, {
-                      font: font,
-                      size: 3,
-
-                      depth: 0.2,
-
-                      curveSegments: 12,
-
-                      bevelEnabled: true,
-                      bevelThickness: 0.15,
-
-                      bevelSize: 0.3,
-
-                      bevelSegments: 5,
-                    });
-                  },
-                );
-        </script>
+        <script type="module" src="index.js"></script>
     </body>
 </html>
